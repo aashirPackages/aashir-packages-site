@@ -5,13 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Products - Aashir Packages</title>
   <link rel="stylesheet" href="products.css">
+  <!-- RESPONSIVE META TAGS ADDED -->
+  <meta name="theme-color" content="#ffffff">
 </head>
 <body>
 
 <header class="navbar">
   <img src="Aashir Packages Logo Design.png" alt="Aashir Packages Logo" class="logo">
+  <!-- MOBILE MENU TOGGLE ADDED -->
+  <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
   <nav>
-    <ul>
+    <ul class="nav-menu">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="products.html" class="active">Products</a></li>
@@ -22,198 +26,207 @@
 
 <!-- Products Section -->
 <section class="products">
-  <h2>Our Products</h2>
-  <div class="product-grid">
-   
-    <!-- Aqua Water Injection Box -->
-   <div class="product-card" 
-     onclick="goToDetails(
-      'Aqua Water Injection Box',
-      'https://images.unsplash.com/photo-1623682687938-515344908afe?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0',
-      'High-quality injection packaging designed for safety and durability. Ideal for pharmaceutical companies requiring hygienic and strong cartons.',
-      1500)">
-  
-  <a href="product-details.html?title=Aqua%20Water%20Injection%20Box&img=https://images.unsplash.com/photo-1623682687938-515344908afe&desc=High-quality%20injection%20packaging%20designed%20for%20safety%20and%20durability.&price=1500"></a>
-  
-  <img src="https://images.unsplash.com/photo-1623682687938-515344908afe?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0" 
-       alt="Aqua Water Injection Box">
+  <div class="container">
+    <h2>Our Products</h2>
+    <div class="product-grid">
+     
+      <!-- Aqua Water Injection Box -->
+      <div class="product-card" data-product='{"title":"Aqua Water Injection Box","img":"https://images.unsplash.com/photo-1623682687938-515344908afe?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0","desc":"High-quality injection packaging designed for safety and durability. Ideal for pharmaceutical companies requiring hygienic and strong cartons.","price":1500}'>
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1623682687938-515344908afe?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0" alt="Aqua Water Injection Box">
+        </div>
+        <div class="product-content">
+          <h3>Aqua Water Injection Box</h3>
+          <p><strong>Buy Custom Medicine Boxes | Wholesale</strong></p>
+          <button class="view-details-btn">View Details</button>
+        </div>
+      </div>
 
-  <h3><span>Aqua Water Injection Box</span></h3>
-  <p> <strong>Buy Custom Medicine Boxes | Wholesale</strong></p>
-  
-</div>
-<!-- Pizza Box -->
-<div class="product-card" onclick="goToDetails(
-  'Pizza Box',
-  'https://images.unsplash.com/photo-1632657597174-2a89667b468f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0',
-  'Strong, eco-friendly pizza boxes that lock in heat and freshness. Perfect for small shops and large food chains.',
-  25)">
-  
-  <a href="product-details.html?title=Pizza%20Box&img=https://images.unsplash.com/photo-1632657597174-2a89667b468f&q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&desc=Strong,%20eco-friendly%20pizza%20boxes%20that%20lock%20in%20heat%20and%20freshness.&price=25">
-  </a>
-  
-  <img src="https://images.unsplash.com/photo-1632657597174-2a89667b468f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0" alt="Pizza Box">
-  <h3><span class="clickable-text">Pizza Box</span></h3>
-  <p><strong>Buy Pizza Box 13" </strong></p>
-  
-</div>
+      <!-- Pizza Box -->
+      <div class="product-card" data-product='{"title":"Pizza Box","img":"https://images.unsplash.com/photo-1632657597174-2a89667b468f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0","desc":"Strong, eco-friendly pizza boxes that lock in heat and freshness. Perfect for small shops and large food chains.","price":25}'>
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1632657597174-2a89667b468f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0" alt="Pizza Box">
+        </div>
+        <div class="product-content">
+          <h3>Pizza Box</h3>
+          <p><strong>Buy Pizza Box  sizes( 10", 12", 14", 16")"</strong></p>
+          <button class="view-details-btn">View Details</button>
+        </div>
+      </div>
 
-  <!-- Water Injection Box -->
-<div class="product-card" onclick="goToDetails(
-  'Water Injection Box',
-  'https://plus.unsplash.com/premium_photo-1745164066504-3dd6f5a3a7f8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0',
-  'Durable packaging designed for safe storage and transport of pharmaceutical injections.',
-  20)">
-  <img src="https://plus.unsplash.com/premium_photo-1745164066504-3dd6f5a3a7f8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0" alt="Water Injection Box">
-  <h3><span class="clickable-text">Water Injection Box</span></h3>
-  <p><strong>Durable Boxes | Safe Pharmaceutical Packaging</strong></p>
-  
-</div>
+      <!-- Water Injection Box -->
+      <div class="product-card" data-product='{"title":"Water Injection Box","img":"https://plus.unsplash.com/premium_photo-1745164066504-3dd6f5a3a7f8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0","desc":"Durable packaging designed for safe storage and transport of pharmaceutical injections.","price":20}'>
+        <div class="product-image">
+          <img src="https://plus.unsplash.com/premium_photo-1745164066504-3dd6f5a3a7f8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0" alt="Water Injection Box">
+        </div>
+        <div class="product-content">
+          <h3>Water Injection Box</h3>
+          <p><strong>Durable Boxes | Safe Pharmaceutical Packaging</strong></p>
+          <button class="view-details-btn">View Details</button>
+        </div>
+      </div>
 
-<!-- Ufone Box -->
-<div class="product-card" onclick="goToDetails(
-  'Ufone Packaging Box',
-  'ufone.jpg',
-  'Premium telecom packaging designed for strength and stylish presentation.',
-  30)">
-  <img src="ufone.jpg" alt="Ufone Box">
-  <h3><span class="clickable-text">Ufone Packaging Box</span></h3>
-  <p><strong>Premium Telecom Packaging | Strong & Stylish</strong></p>
-  
-</div>
+      <!-- Ufone Box -->
+      <div class="product-card" data-product='{"title":"Ufone Packaging Box","img":"ufone.jpg","desc":"Premium telecom packaging designed for strength and stylish presentation.","price":30}'>
+        <div class="product-image">
+          <img src="ufone.jpg" alt="Ufone Box">
+        </div>
+        <div class="product-content">
+          <h3>Ufone Packaging Box</h3>
+          <p><strong>Premium Telecom Packaging | Strong & Stylish</strong></p>
+          <button class="view-details-btn">View Details</button>
+        </div>
+      </div>
 
-<!-- Sooper Biscuit Box -->
-<div class="product-card" onclick="goToDetails(
-  'Sooper Biscuit Box',
-  'sooper box.jpg',
-  'High-quality biscuit packaging to maintain freshness and brand appeal.',
-  25)">
-  <img src="sooper box.jpg" alt="Sooper Biscuit Box">
-  <h3><span class="clickable-text">Sooper Biscuit Box</span></h3>
-  <p><strong>Buy Sooper Biscuit Packaging | Wholesale Biscuit Boxes</strong></p>
-  
-</div>
+      <!-- Sooper Biscuit Box -->
+      <div class="product-card" data-product='{"title":"Sooper Biscuit Box","img":"sooper box.jpg","desc":"High-quality biscuit packaging to maintain freshness and brand appeal.","price":25}'>
+        <div class="product-image">
+          <img src="sooper box.jpg" alt="Sooper Biscuit Box">
+        </div>
+        <div class="product-content">
+          <h3>Sooper Biscuit Box</h3>
+          <p><strong>Buy Sooper Biscuit Packaging | Wholesale Biscuit Boxes</strong></p>
+          <button class="view-details-btn">View Details</button>
+        </div>
+      </div>
 
-<!-- Coca Cola Packaging -->
-<div class="product-card" onclick="goToDetails(
-  'Coca Cola Packaging',
-  'coca cola box.jpg',
-  'Branded carton packaging for beverages ensuring safe delivery and premium look.',
-  30)">
-  <img src="coca cola box.jpg" alt="Coca Cola Box">
-  <h3><span class="clickable-text">Coca Cola Packaging</span></h3>
-  <p><strong>Branded carton packaging for beverages</strong></p>
-  
-</div>
+      <!-- Coca Cola Packaging -->
+      <div class="product-card" data-product='{"title":"Coca Cola Packaging","img":"coca cola box.jpg","desc":"Branded carton packaging for beverages ensuring safe delivery and premium look.","price":30}'>
+        <div class="product-image">
+          <img src="coca cola box.jpg" alt="Coca Cola Box">
+        </div>
+        <div class="product-content">
+          <h3>Coca Cola Packaging</h3>
+          <p><strong>Branded carton packaging for beverages</strong></p>
+          <button class="view-details-btn">View Details</button>
+        </div>
+      </div>
 
-<!-- Kurkure Packaging -->
-<div class="product-card" onclick="goToDetails(
-  'Kurkure Packaging',
-  'kurkure box.jpg',
-  'Attractive snack packaging that keeps products fresh and appealing.',
-  20)">
-  <img src="kurkure box.jpg" alt="Kurkure Box">
-  <h3><span class="clickable-text">Kurkure Packaging</span></h3>
-  <p><strong>Snack boxes with attractive design</strong></p>
-  
-</div>
+      <!-- Kurkure Packaging -->
+      <div class="product-card" data-product='{"title":"Kurkure Packaging","img":"kurkure box.jpg","desc":"Attractive snack packaging that keeps products fresh and appealing.","price":20}'>
+        <div class="product-image">
+          <img src="kurkure box.jpg" alt="Kurkure Box">
+        </div>
+        <div class="product-content">
+          <h3>Kurkure Packaging</h3>
+          <p><strong>Snack boxes with attractive design</strong></p>
+          <button class="view-details-btn">View Details</button>
+        </div>
+      </div>
 
-<!-- AZU Packaging -->
-<div class="product-card" onclick="goToDetails(
-  'AZU Packaging',
-  'AZU box.jpg',
-  'Customized printed cartons made to fit your brand perfectly.',
-  28)">
-  <img src="AZU box.jpg" alt="AZU Box">
-  <h3><span class="clickable-text">AZU Packaging</span></h3>
-  <p><strong>Customized printed cartons for brands</strong></p>
-  
-</div>
+      <!-- AZU Packaging -->
+      <div class="product-card" data-product='{"title":"AZU Packaging","img":"AZU box.jpg","desc":"Customized printed cartons made to fit your brand perfectly.","price":28}'>
+        <div class="product-image">
+          <img src="AZU box.jpg" alt="AZU Box">
+        </div>
+        <div class="product-content">
+          <h3>AZU Packaging</h3>
+          <p><strong>Customized printed cartons for brands</strong></p>
+          <button class="view-details-btn">View Details</button>
+        </div>
+      </div>
 
-<!-- Luxury Collection -->
-<div class="product-card" onclick="goToDetails(
-  'Luxury Collection Boxes',
-  'luxury colllection.jpg',
-  'Premium luxury packaging perfect for gifts and high-end products.',
-  50)">
-  <img src="luxury colllection.jpg" alt="Luxury Packaging">
-  <h3><span class="clickable-text">Luxury Collection Boxes</span></h3>
-  <p><strong>Premium gift & luxury packaging solutions</strong></p>
-  
-</div>
+      <!-- Luxury Collection -->
+      <div class="product-card" data-product='{"title":"Luxury Collection Boxes","img":"luxury colllection.jpg","desc":"Premium luxury packaging perfect for gifts and high-end products.","price":50}'>
+        <div class="product-image">
+          <img src="luxury colllection.jpg" alt="Luxury Packaging">
+        </div>
+        <div class="product-content">
+          <h3>Luxury Collection Boxes</h3>
+          <p><strong>Premium gift & luxury packaging solutions</strong></p>
+          <button class="view-details-btn">View Details</button>
+        </div>
+      </div>
 
-<!-- White Carton Box -->
-<div class="product-card" onclick="goToDetails(
-  'White Carton Box',
-  'simple white box.jpg',
-  'Plain, durable, and multi-purpose carton packaging.',
-  15)">
-  <img src="simple white box.jpg" alt="White Packaging Box">
-  <h3><span class="clickable-text">White Carton Box</span></h3>
-  <p><strong>Plain & durable carton packaging</strong></p>
-  
-</div>
+      <!-- White Carton Box -->
+      <div class="product-card" data-product='{"title":"White Carton Box","img":"simple white box.jpg","desc":"Plain, durable, and multi-purpose carton packaging.","price":15}'>
+        <div class="product-image">
+          <img src="simple white box.jpg" alt="White Packaging Box">
+        </div>
+        <div class="product-content">
+          <h3>White Carton Box</h3>
+          <p><strong>Plain & durable carton packaging</strong></p>
+          <button class="view-details-btn">View Details</button>
+        </div>
+      </div>
 
-<!-- Honda Packaging -->
-<div class="product-card" onclick="goToDetails(
-  'Honda Packaging',
-  'honda box 2.jpg',
-  'Branded automotive packaging designed for strong and reliable transport.',
-  35)">
-  <img src="honda box 2.jpg" alt="Honda Packaging">
-  <h3><span class="clickable-text">Honda Packaging</span></h3>
-  <p><strong>Branded automotive packaging cartons</strong></p>
-  
-</div>
+      <!-- Honda Packaging -->
+      <div class="product-card" data-product='{"title":"Honda Packaging","img":"honda box 2.jpg","desc":"Branded automotive packaging designed for strong and reliable transport.","price":35}'>
+        <div class="product-image">
+          <img src="honda box 2.jpg" alt="Honda Packaging">
+        </div>
+        <div class="product-content">
+          <h3>Honda Packaging</h3>
+          <p><strong>Branded automotive packaging cartons</strong></p>
+          <button class="view-details-btn">View Details</button>
+        </div>
+      </div>
 
-<!-- Honda Alternate -->
-<div class="product-card" onclick="goToDetails(
-  'Honda Box (Alternate)',
-  'honda box.jpg',
-  'Durable packaging for spare parts with professional finishing.',
-  32)">
-  <img src="honda box.jpg" alt="Honda Packaging">
-  <h3><span class="clickable-text">Honda Box (Alternate)</span></h3>
-  <p><strong>Durable packaging for spare parts</strong></p>
-  
-</div>
+      <!-- Honda Alternate -->
+      <div class="product-card" data-product='{"title":"Honda Box (Alternate)","img":"honda box.jpg","desc":"Durable packaging for spare parts with professional finishing.","price":32}'>
+        <div class="product-image">
+          <img src="honda box.jpg" alt="Honda Packaging">
+        </div>
+        <div class="product-content">
+          <h3>Honda Box (Alternate)</h3>
+          <p><strong>Durable packaging for spare parts</strong></p>
+          <button class="view-details-btn">View Details</button>
+        </div>
+      </div>
 
-<!-- Mailing Boxes -->
-<div class="product-card" onclick="goToDetails(
-  'Mailing Boxes',
-  'mailing box.jpg',
-  'Secure and professional shipping boxes designed to protect items during delivery.',
-  40)">
-  <img src="mailing box.jpg" alt="Mailing Box">
-  <h3><span class="clickable-text">Mailing Boxes</span></h3>
-  <p><strong>Secure & professional shipping boxes</strong></p>
-  
-</div>
+      <!-- Mailing Boxes -->
+      <div class="product-card" data-product='{"title":"Mailing Boxes","img":"mailing box.jpg","desc":"Secure and professional shipping boxes designed to protect items during delivery.","price":40}'>
+        <div class="product-image">
+          <img src="mailing box.jpg" alt="Mailing Box">
+        </div>
+        <div class="product-content">
+          <h3>Mailing Boxes</h3>
+          <p><strong>Secure & professional shipping boxes</strong></p>
+          <button class="view-details-btn">View Details</button>
+        </div>
+      </div>
 
+    </div>
+  </div>
 </section>
 
+<!-- Custom Box Request Section -->
+<section class="suggestion-section">
+  <div class="container">
+    <div class="suggestion-box">
+      <h3>Custom Box Request</h3>
+      <p>You can share your design idea via WhatsApp, SMS, or Email — whichever is convenient for you.</p>
 
-<div class="suggestion-box">
-  <h3>Custom Box Request</h3>
-  <p>You can share your design idea via WhatsApp, SMS, or Email — whichever is convenient for you.</p>
-
-  <form id="suggestionForm">
-    <input type="text" id="name" placeholder="Your Name" required>
-    <input type="text" id="contact" placeholder="Contact Number or Email" required>
-    <textarea id="details" placeholder="Describe your box design idea..." required></textarea>
-    <input type="number" id="quantity" placeholder="Quantity" required>
-    <div class="send-options">
-      <button type="button" id="sendWhatsapp">WhatsApp</button>
-      <button type="button" id="sendSMS">SMS</button>
-      <button type="button" id="sendEmail">Email</button>
+      <form id="suggestionForm">
+        <div class="form-group">
+          <input type="text" id="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <input type="text" id="contact" placeholder="Contact Number or Email" required>
+        </div>
+        <div class="form-group">
+          <textarea id="details" placeholder="Describe your box design idea..." required rows="4"></textarea>
+        </div>
+        <div class="form-group">
+          <input type="number" id="quantity" placeholder="Quantity" required>
+        </div>
+        <div class="send-options">
+          <button type="button" id="sendWhatsapp" class="send-btn whatsapp-btn">
+            <span>WhatsApp</span>
+          </button>
+          <button type="button" id="sendSMS" class="send-btn sms-btn">
+            <span>SMS</span>
+          </button>
+          <button type="button" id="sendEmail" class="send-btn email-btn">
+            <span>Email</span>
+          </button>
+        </div>
+      </form>
     </div>
-  </form>
-</div>
+  </div>
+</section>
 
-
-
-<script src="product.js"></script>
-
+<!-- Footer -->
 <footer>
   <div class="footer-container">
     <!-- About -->
@@ -235,26 +248,149 @@
 
     <!-- Contact Info -->
     <div class="footer-contact"> 
-  <h4>Contact Us</h4>
-  <p>📍 Lahore, Pakistan</p>
-<p>📞 <a href="tel:+923000202001">+92-300-0202001</a></p>
-<p>📧 <a href="mailto:aashirpackages@gmail.com">aashirpackages@gmail.com</a></p>
-</div>
-
+      <h4>Contact Us</h4>
+      <p>📍 Lahore, Pakistan</p>
+      <p>📞 <a href="tel:+923000202001">+92-300-0202001</a></p>
+      <p>📧 <a href="mailto:aashirpackages@gmail.com">aashirpackages@gmail.com</a></p>
+    </div>
 
     <!-- Social Media -->
     <div class="footer-social">
-  <h4>Follow Us</h4>
-  <a href="https://instagram.com/aashirpackages_14" target="_blank">Instagram</a> |
-  <a href="https://wa.me/923000202001" target="_blank">WhatsApp</a>
-</div>
-
+      <h4>Follow Us</h4>
+      <div class="social-links">
+        <a href="https://instagram.com/aashirpackages_14" target="_blank">Instagram</a>
+        <a href="https://wa.me/923000202001" target="_blank">WhatsApp</a>
+      </div>
+    </div>
   </div>
 
   <!-- Bottom Line -->
   <p class="footer-bottom">&copy; 2025 Aashir Packages. All Rights Reserved.</p>
 </footer>
 
+<!-- RESPONSIVE JAVASCRIPT ADDED -->
+<script>
+  // Mobile menu toggle functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (mobileMenuToggle && navMenu) {
+      mobileMenuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        mobileMenuToggle.classList.toggle('active');
+      });
+    }
+    
+    // Close menu when clicking on a link
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        navMenu.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+      });
+    });
+
+    // Product details functionality
+    const viewDetailsButtons = document.querySelectorAll('.view-details-btn');
+    viewDetailsButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const productCard = this.closest('.product-card');
+        const productData = JSON.parse(productCard.getAttribute('data-product'));
+        showProductDetails(productData);
+      });
+    });
+
+    // Custom box request functionality
+    const suggestionForm = document.getElementById('suggestionForm');
+    const sendWhatsapp = document.getElementById('sendWhatsapp');
+    const sendSMS = document.getElementById('sendSMS');
+    const sendEmail = document.getElementById('sendEmail');
+
+    function getFormData() {
+      return {
+        name: document.getElementById('name').value,
+        contact: document.getElementById('contact').value,
+        details: document.getElementById('details').value,
+        quantity: document.getElementById('quantity').value
+      };
+    }
+
+    function validateForm(data) {
+      return data.name && data.contact && data.details && data.quantity;
+    }
+
+    sendWhatsapp.addEventListener('click', function() {
+      const data = getFormData();
+      if (validateForm(data)) {
+        const message = `Custom Box Request:\nName: ${data.name}\nContact: ${data.contact}\nDetails: ${data.details}\nQuantity: ${data.quantity}`;
+        const whatsappUrl = `https://wa.me/923000202001?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+      } else {
+        alert('Please fill in all fields.');
+      }
+    });
+
+    sendSMS.addEventListener('click', function() {
+      const data = getFormData();
+      if (validateForm(data)) {
+        const message = `Custom Box Request: ${data.name} - ${data.details} - Qty: ${data.quantity}`;
+        const smsUrl = `sms:+923000202001?body=${encodeURIComponent(message)}`;
+        window.location.href = smsUrl;
+      } else {
+        alert('Please fill in all fields.');
+      }
+    });
+
+    sendEmail.addEventListener('click', function() {
+      const data = getFormData();
+      if (validateForm(data)) {
+        const subject = 'Custom Box Request from ' + data.name;
+        const body = `Contact: ${data.contact}\n\nDetails: ${data.details}\n\nQuantity: ${data.quantity}`;
+        const mailtoUrl = `mailto:aashirpackages@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailtoUrl;
+      } else {
+        alert('Please fill in all fields.');
+      }
+    });
+
+    // Product details modal function
+    function showProductDetails(product) {
+      const modal = document.createElement('div');
+      modal.className = 'product-modal';
+      modal.innerHTML = `
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <img src="${product.img}" alt="${product.title}">
+          <h3>${product.title}</h3>
+          <p>${product.desc}</p>
+          <p class="price">Starting from: Rs. ${product.price}</p>
+          <button class="inquiry-btn" onclick="inquireAboutProduct('${product.title}')">Inquire About This Product</button>
+        </div>
+      `;
+      
+      document.body.appendChild(modal);
+      
+      const closeModal = modal.querySelector('.close-modal');
+      closeModal.addEventListener('click', function() {
+        document.body.removeChild(modal);
+      });
+      
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          document.body.removeChild(modal);
+        }
+      });
+    }
+
+    // Global function for product inquiry
+    window.inquireAboutProduct = function(productName) {
+      const message = `I'm interested in ${productName}. Please provide more details.`;
+      const whatsappUrl = `https://wa.me/923000202001?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+    };
+  });
+</script>
 
 </body>
 </html>
