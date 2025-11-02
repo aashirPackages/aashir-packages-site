@@ -51,3 +51,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+
+// ---------- mobile nav toggle ----------
+document.addEventListener('DOMContentLoaded', function () {
+  const toggle = document.querySelector('.nav-toggle');
+  if (!toggle) return;
+
+  toggle.addEventListener('click', function (e) {
+    e.stopPropagation();
+    document.body.classList.toggle('nav-open');
+  });
+
+  // close nav when clicking outside menu
+  document.addEventListener('click', function (e) {
+    if (!document.body.classList.contains('nav-open')) return;
+    const nav = document.querySelector('.site-nav');
+    if (!nav.contains(e.target)) document.body.classList.remove('nav-open');
+  });
+
+  // close with Escape
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') document.body.classList.remove('nav-open');
+  });
+});
+
