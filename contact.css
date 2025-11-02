@@ -1,0 +1,193 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #2C3E50;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #2C3E50;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    width: 120px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a.active {
+     color: #f39c12;
+}
+#text{
+    font-size: 20px;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+/* Contact Section */
+.contact {
+  padding: 50px 20px;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.contact h4 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+.contact p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.contact a {
+  color: #ff6600;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* Map Container */
+.map-container {
+  margin: 20px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+}
+
+.contact-form .btn {
+  background: #ff6600;
+  color: white;
+  font-size: 18px;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.contact-form .btn:hover {
+  background: #e65c00;
+}
+
+
+/* Footer */
+footer {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-container div {
+  flex: 1;
+  margin: 15px;
+  min-width: 200px;
+}
+
+.footer-container h3,
+.footer-container h4 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+  color: #ffcc00;
+}
+
+.footer-contact p,
+.footer-social a {
+  margin: 5px 0;
+}
+
+.footer-social a {
+  color: #ddd;
+  text-decoration: none;
+  margin-right: 10px;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #ffcc00;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.footer-contact a {
+  color: white;              /* white text */
+  text-decoration: none;     /* remove underline */
+  font-weight: 500;          /* optional: make it a little bold */
+}
+

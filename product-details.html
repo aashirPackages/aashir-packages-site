@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Details</title>
+<style>
+  body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; color:#333; }
+  .product-details { display:flex; gap:30px; margin:40px auto; max-width:1000px; background:#fff; padding:20px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+  .product-details img { width:500px; border-radius:10px; object-fit:cover; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+  .product-info { flex:1; display:flex; flex-direction:column; }
+  .product-info h1 { font-size:28px; margin-bottom:15px; }
+  .desc h3 { margin-top:20px; }
+  .desc p, .desc ul { line-height:1.6; font-size:16px; }
+  .price { margin-top:25px; font-size:20px; font-weight:bold; color:#27ae60; }
+  .extra-images { margin:40px auto; max-width:1000px; }
+  .extra-images h2 { font-size:22px; margin-bottom:15px; }
+  .extra-img-list { display:flex; gap:15px; flex-wrap:wrap; }
+  .extra-img-list img { width:200px; height:auto; border-radius:8px; object-fit:cover; border:1px solid #ddd; }
+  .buy-section { max-width:500px; margin:40px auto; padding:25px; border-radius:12px; background:#ffffff; box-shadow:0 4px 15px rgba(0,0,0,0.1); }
+  .buy-section h2 { text-align:center; margin-bottom:20px; }
+  .buy-section label { display:block; font-weight:600; margin-bottom:5px; }
+  .buy-section input { width:100%; padding:10px; margin-bottom:18px; border:1px solid #ccc; border-radius:8px; font-size:14px; }
+  .buy-section button { width:100%; padding:12px; background:#3498db; color:white; font-size:16px; font-weight:600; border:none; border-radius:8px; cursor:pointer; }
+  .buy-section button:hover { background:#2980b9; }
+</style>
+</head>
+<body>
+
+<div class="product-details">
+  <img id="productImage" src="" alt="Product">
+  <div class="product-info">
+    <h1 id="productTitle"></h1>
+    <div id="productDesc" class="desc"></div>
+    <p class="price">Price: Depend on Size, Material & Quantity </p>
+  </div>
+</div>
+
+<div class="extra-images">
+  <h2>More Views</h2>
+  <div class="extra-img-list" id="extraImages"></div>
+</div>
+
+<div class="buy-section">
+  <h2>Order Now</h2>
+  <form id="orderForm">
+    <label>Name:</label>
+    <input type="text" name="customer_name" required>
+
+    <label>Email:</label>
+    <input type="email" name="customer_email" required>
+
+    <label>Product:</label>
+    <input type="text" name="product_name" id="formProductName" value="Custom Box" readonly>
+
+    <label>Quantity:</label>
+    <input type="number" name="quantity" value="1" min="1">
+
+    <button type="submit">Buy Now</button>
+  </form>
+
+  <p id="orderMessage" style="margin-top:10px; color:green; font-weight:bold;"></p>
+</div>
+
+<script>
+  document.getElementById("orderForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // stop page reload
+
+    const name = this.customer_name.value.trim();
+    const email = this.customer_email.value.trim();
+    const product = this.product_name.value.trim();
+    const quantity = this.quantity.value;
+
+    if (!name || !email) {
+      alert("Please fill all required fields!");
+      return;
+    }
+
+    // simulate order processing
+    const message = `✅ Thank you ${name}! Your order for ${quantity} ${product}(s) has been received. We’ll contact you soon at ${email}.`;
+
+    document.getElementById("orderMessage").textContent = message;
+
+    // reset form
+    this.reset();
+  });
+</script>
+
+
+
+<div class="product-detail container">
+  <div class="detail-image">
+    <img src="your-image.jpg" alt="Product Image">
+  </div>
+  <div class="detail-info">
+    <h2>Box Title</h2>
+    <p>Description of the box...</p>
+    <button>Order Now</button>
+  </div>
+</div>
+
+
+<script>
+const products = {
+  "Aqua Water Injection Box": {
+    title:"Aqua Water Injection Box",
+    price:"1500",
+    image:"https://images.unsplash.com/photo-1623682687938-515344908afe?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0",
+    description:`<h3>Long Description:</h3><p>This product is specially designed for the pharmaceutical and medical industries as a sterile, safe packaging solution, ensuring that the solution remains free from contamination. The box holds high-grade injection water bottles or ampoules suitable for medical use. Packaging includes leak-proof materials, anti-moisture lining, and protective inner inserts to prevent damage during transport. The box can withstand temperature variations and rough handling. Ideal for hospitals, clinics, vaccine manufacturers, diagnostic labs, and pharmaceutical companies.
+</p><h3>Features:</h3><ul><li>Sterile, pyrogen-free packaging</li>
+  <li>Leak-proof, moisture-resistant material</li>
+  <li>Strong structural design to protect during shipping</li>
+  <li>Easy handling and secure closure mechanism</li>
+  <li>Custom labeling and batch coding available</li><h3>Usage Scenarios:</h3><ul><li>Safe transport of vials or ampoules</li>
+  <li>Hospital/clinic inventory distribution</li>
+  <li>Vaccine or injectable drug supply chain</li>
+  <li>Packaging for clean-room or sterile environments</li></ul>`,
+    extraImages:[ "https://www.firstaiddistributions.com.au/cdn/shop/files/water-for-injection-10ml-box-20-default-title-127179-44729758220502.jpg?v=1743484011&width=1946","https://www.biolink.com/uploads/image/20240906/15/hydrolinx-water-for-injection-in-bottles-exporter.webp"]
+  },
+  "Pizza Box": {
+    title:"Pizza Box",
+    price:"25",
+    image:"https://images.unsplash.com/photo-1632657597174-2a89667b468f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0",
+    description:`<h3>Long Description:</h3><p>These pizza boxes are specially designed to maintain the perfect temperature and freshness of your pizzas during delivery or takeaway. Made from eco-friendly, high-quality cardboard, they are durable, grease-resistant, and ensure the pizza reaches the customer intact and delicious. The design locks in heat while preventing the pizza from becoming soggy. Ideal for small pizzerias, large food chains, and delivery services.
+</p><h3>Features:</h3><ul><li>Eco-friendly, recyclable cardboard material</li>
+  <li>Grease-resistant and sturdy design</li>
+  <li>Secure locking mechanism to prevent spillage</li>
+  <li>Customizable branding available</li>
+  <li>Available in multiple sizes to fit different pizza diameters</li></ul><h3>Usage Scenarios:</h3><ul><li>Pizza delivery and takeaway services</li>
+  <li>Restaurants and pizzerias maintaining pizza quality</li>
+  <li>Food festivals and catering events</li>
+  <li>Bulk orders for parties and corporate events</li></ul>`,
+    extraImages:["https://media.istockphoto.com/id/483857665/photo/brown-pizza-box.webp?a=1&b=1&s=612x612&w=0&k=20&c=29QUYmgsBRc810FRi7kQgBDmxAQniFdkEr6XU0CE1kI=" , "https://images.unsplash.com/photo-1600359773269-0e5197c3829b?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"]
+  },
+  "Water Injection Box": {
+    title:"Water Injection Box",
+    price:"20",
+    image:"https://plus.unsplash.com/premium_photo-1745164066504-3dd6f5a3a7f8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+    description:`<h3>Long Description:</h3><p>This Water Injection Box is specially designed for pharmaceutical and medical industries, providing a sterile, safe, and durable packaging solution that ensures injectable solutions remain contamination-free. The box is suitable for storing high-grade water vials or ampoules used in medical treatments. Its construction includes leak-proof materials, anti-moisture linings, and protective inner inserts to prevent damage during transportation. The packaging is engineered to withstand temperature variations and rough handling, making it ideal for hospitals, clinics, vaccine manufacturers, diagnostic laboratories, and pharmaceutical companies.</p>
+    <h3>Features:</h3><ul>Sterile, pyrogen-free packaging
+Leak-proof, moisture-resistant material
+Strong structural design to protect during shipping
+Easy handling and secure closure mechanism
+Custom labeling and batch coding options available</ul><h3>Usage Scenarios:</h3><ul>Safe transport of vials or ampoules
+Hospital and clinic inventory distribution
+Supply chain for vaccines or injectable drugs
+Packaging suitable for clean-room and sterile environments</ul>`,
+    extraImages:["https://media.istockphoto.com/id/521974843/photo/close-up-saline-solution-drip-for-patient.webp?a=1&s=612x612&w=0&k=20&c=o3FaZyisuecE7ayTiBM5OM1VHJZeLgB1f2LzYwQilTo=" , "https://images.unsplash.com/photo-1609009630912-f16dcf3e03a6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D"]
+  },
+  "Ufone Packaging Box": {
+    title:"Ufone Packaging Box",
+    price:"30",
+    image:"ufone.jpg",
+    description:`<h3>Long Description:</h3><p>The Ufone Packaging Box is a premium telecom packaging solution designed to combine durability, functionality, and professional aesthetics. Crafted with high-quality materials, it ensures that telecom products such as SIM cards, mobile accessories, and promotional items are delivered safely without damage. The box features a sleek design that reinforces brand identity while providing a secure storage solution during shipping and handling. Ideal for telecom companies, retailers, and distributors, this packaging enhances the customer experience by presenting products in a stylish and reliable manner. Its robust construction protects items from impacts, moisture, and wear, making it suitable for long-distance delivery and everyday handling.</p><h3>Features:</h3><ul>High-quality, durable material for protection
+Sleek and professional design reflecting the brand
+Secure closure to prevent product damage
+Lightweight yet strong construction
+Custom branding options available</ul><h3>Usage Scenarios:</h3><ul>Packaging telecom products (SIM cards, accessories)
+Brand promotion and marketing campaigns
+Safe transport and storage of retail items
+Corporate gifting or promotional bundles</ul>`,
+    extraImages:["https://www.zamzamstore.com.pk/cdn/shop/files/rn-image_picker_lib_temp_91c5d0c1-bcc4-4d68-8f6d-bebbd7df4b64.png?v=1758197662&width=1946"]
+  },
+  "Sooper Biscuit Box": {
+    title:"Sooper Biscuit Box",
+    price:"25",
+    image:"sooper box.jpg",
+    description:`<h3>Long Description:</h3><p>The Sooper Biscuit Box is designed to maintain freshness, protect contents, and present biscuits in an attractive and hygienic way. Crafted from high-quality, food-grade materials, this packaging ensures that biscuits retain their crispness and flavor from production to consumption. The box is sturdy enough to withstand handling during transport and storage, reducing the risk of breakage. Its vibrant design and brand-friendly aesthetics make it perfect for retail display, enhancing shelf appeal and customer engagement. Ideal for biscuit manufacturers, wholesalers, and retailers, this packaging balances practicality with visual appeal, ensuring a memorable unboxing experience.</p><h3>Features:</h3><ul>Freshness-preserving, food-grade material
+Sturdy and durable construction to prevent breakage
+Attractive design that promotes brand visibility
+Lightweight and easy to handle
+Customizable printing and labeling options</ul><h3>Usage Scenarios:</h3><ul>Retail biscuit packaging for supermarkets and stores
+Safe transport from factory to distributors or retailers
+Gift packs and promotional packaging
+Display on store shelves for marketing and brand recognition</ul>`,
+    extraImages:["sooper1.jpeg","sooper2.jpeg"]
+  },
+  "Coca Cola Packaging": {
+    title:"Coca Cola Packaging",
+    price:"30",
+    image:"coca cola box.jpg",
+    description:`<h3>Long Description:</h3><p>The Coca Cola Packaging Box is specially designed to ensure safe and premium delivery of beverages. Made from high-quality, durable carton material, it provides excellent protection against impacts, moisture, and temperature variations during transportation. The packaging emphasizes brand visibility, featuring the iconic Coca Cola logo and colors, making it immediately recognizable on shelves and during deliveries. Its sturdy structure allows for stacking, while maintaining the integrity of the bottles or cans inside. Ideal for distributors, retailers, and restaurants, this box ensures that beverages reach consumers in perfect condition, combining functionality with a professional, branded presentation.</p><h3>Features:</h3><ul>Strong, durable material to protect beverages
+Branded design with Coca Cola logo for instant recognition
+Resistant to moisture and minor impacts
+Easy to handle and transport
+Stackable design for storage efficiency</ul><h3>Usage Scenarios:</h3><ul>Beverage distribution to retailers and restaurants
+Safe packaging for deliveries and shipments
+Retail shelf display to enhance brand presence
+Promotional packs or multipacks for events</ul>`,
+    extraImages:["coke1.jpg","coke2.jpeg"]
+  },
+  "Kurkure Packaging": {
+    title:"Kurkure Packaging",
+    price:"20",
+    image:"kurkure box.jpg",
+    description:`<h3>Long Description:</h3><p>The Kurkure Packaging Box is specially designed to maintain the freshness, crispiness, and unique taste of the popular snack. Crafted from high-quality food-grade material, it ensures that the product remains safe from moisture, dust, and external contaminants. The vibrant, eye-catching design reflects the fun and flavorful personality of Kurkure, making it stand out in retail environments. The packaging also provides structural strength, protecting the pouches during shipping and stacking. With strong branding and attractive graphics, the Kurkure box not only safeguards the product but also enhances its visibility and appeal for consumers. This makes it ideal for wholesale distribution, retail shelf display, and marketing campaigns.</p><h3>Features:</h3><ul>Food-grade, safe, and durable material Moisture-resistant to keep snacks fresh and crunchy
+Bright, attractive, and brand-consistent design
+Strong carton construction for stacking and transport
+Customizable for promotional offers and multipacks</ul><h3>Usage Scenarios:</h3><ul>Wholesale distribution to supermarkets and stores
+Retail shelf display to attract customer attention
+Event or promotional packaging for larger packs
+Safe transport of bulk snack packs to distributors</ul>`,
+    extraImages:["kurkure.jpeg","kurkure pic 2.jpeg"]
+  },
+  "AZU Packaging": {
+    title:"AZU Packaging",
+    price:"28",
+    image:"AZU box.jpg",
+    description:`<h3>Long Description:</h3><p>The AZU Packaging Box is a premium, customizable carton solution designed to perfectly represent and protect your brand. Built with high-quality cardboard and advanced printing technology, this packaging ensures a professional, vibrant, and eye-catching look that makes products stand out in the market. It is ideal for businesses that want to reinforce their brand identity through packaging that is not only functional but also aesthetically appealing. The AZU box is sturdy enough to handle transportation stress while maintaining its structure and design quality. With options for full-color printing, lamination, embossing, or matte/gloss finishing, it offers a tailored solution that matches your product requirements. Whether used for retail, e-commerce, or promotional campaigns, AZU Packaging provides a balance of durability, style, and branding power.</p><h3>Features:</h3><ul>Premium quality cardboard with strong durability High-resolution printing for vibrant colors and designs
+Customizable finishing options (gloss, matte, embossing, UV coating)
+Brand-focused packaging for maximum shelf impact
+Eco-friendly and recyclable material available</ul><h3>Usage Scenarios:</h3><ul>Retail packaging for branded products
+Promotional or seasonal product launches
+E-commerce shipments with custom branding
+Business identity reinforcement through packaging
+Gift or specialty item packaging</ul>`,
+    extraImages:["azu1.png","azu2.png"]
+  },
+  "Luxury Collection Boxes": {
+    title:"Luxury Collection Boxes",
+    price:"50",
+    image:"luxury colllection.jpg",
+    description:`<h3>Long Description:</h3><p>The Luxury Collection Box is a premium packaging solution crafted for elegance, durability, and sophistication. Designed with high-grade rigid materials, these boxes are perfect for showcasing high-value products, gifts, or limited-edition collections. Their sleek design, flawless finish, and customizable options such as gold foiling, embossing, velvet interiors, magnetic closures, or ribbon pulls make them a statement of class and quality. These boxes not only provide protection but also enhance the unboxing experience, leaving a lasting impression on customers. Luxury Collection Boxes are commonly used in industries such as jewelry, perfumes, watches, cosmetics, and premium fashion, where presentation is as important as the product itself.</p><h3>Features:</h3><ul>Made with high-quality rigid board for durability Elegant finishing options: matte/gloss lamination, gold/silver foiling, embossing, UV coating
+Options for luxury interiors (velvet, silk, or foam inserts)
+Sturdy magnetic closure or ribbon-tied design for a premium feel
+Custom sizes and shapes to match your product perfectly</ul><h3>Usage Scenarios:</h3><ul>Gift packaging for special occasions
+Jewelry, watches, and accessory presentation
+Luxury cosmetics or perfume packaging
+Limited edition or high-end product collections
+Corporate gift boxes for brand promotion</ul>`,
+    extraImages:["luxzury1.png"]
+  },
+  "White Carton Box": {
+    title:"White Carton Box",
+    price:"15",
+    image:"simple white box.jpg",
+    description:`<h3>Long Description:</h3><p>The White Carton Box is a versatile, durable, and cost-effective packaging solution designed for a wide range of industries and everyday uses. Manufactured from high-quality corrugated or cardboard material, it provides excellent protection for products during storage and transportation. Its plain white surface offers a clean, professional look that is ideal for both branding and labeling. Businesses often prefer these boxes because they are easy to customize with logos, stickers, or printed designs, making them suitable for both simple and premium product presentations. The White Carton Box is lightweight yet sturdy, eco-friendly, and recyclable, ensuring both practicality and sustainability. From e-commerce shipments to retail display packaging, these boxes serve as a reliable option for safe and professional packaging.</p><h3>Features:</h3><ul>Made with strong, eco-friendly cardboard or corrugated material Plain white surface for a clean, professional appearance
+Easily customizable with printing, stickers, or branding
+Lightweight yet sturdy structure for safe handling
+Available in multiple sizes for different product needs
+100% recyclable and environmentally friendly</ul><h3>Usage Scenarios:</h3><ul>General-purpose product packaging
+E-commerce shipments and online order deliveries
+Retail store packaging and storage
+Food packaging with custom branding
+Gift packaging with simple customization
+Archiving or storing lightweight household and office items</ul>`,
+    extraImages:["simple1.png"]
+  },
+  "Honda Packaging": {
+    title:"Honda Packaging",
+    price:"35",
+    image:"honda box 2.jpg",
+    description:`<h3>Long Description:</h3><p>Honda Packaging Boxes are premium-quality, branded cartons specifically designed for the automotive industry. Built with heavy-duty corrugated material, these boxes provide maximum protection for automobile parts such as engines, filters, accessories, and spare components during storage and transportation. Each box is engineered to handle weight, pressure, and rough handling, ensuring the safety of the contents throughout the supply chain. The strong build quality makes them highly resistant to damage, while the branded Honda printing gives them a professional and authentic look, reinforcing trust and credibility in the market. These cartons are not only functional but also play a vital role in brand recognition, offering a combination of strength, style, and authenticity.</p><h3>Features:</h3><ul>Constructed with premium-grade corrugated or kraft material for durability
+Reinforced walls for extra strength and shock resistance
+Honda-branded design for professional presentation and brand credibility
+Moisture-resistant coating to protect contents in varied environments
+Eco-friendly and recyclable material, promoting sustainability
+Customizable in size and design to fit different automotive parts</ul><h3>Usage Scenarios:</h3><ul>Safe packaging and transport of automotive spare parts
+Ideal for shipping filters, gears, and smaller machinery parts
+Storage of components in showrooms, warehouses, and dealerships
+Branded display packaging for authorized Honda service centers
+Export-ready packaging for international shipments</ul>`,
+    extraImages:["honda1.png"]
+  },
+  "Honda Box (Alternate)": {
+    title:"Honda Box (Alternate)",
+    price:"32",
+    image:"honda box.jpg",
+    description:`<h3>Long Description:</h3><p>The Honda Box (Alternate) is a durable and professionally finished packaging solution designed to safely store and transport spare parts and accessories for automobiles. Unlike generic cartons, this packaging is tailored for the automotive industry where strength, protection, and a professional appearance are essential. Crafted from heavy-duty corrugated cardboard with precision finishing, the box ensures that parts remain secure, undamaged, and easy to handle during distribution. Its reinforced edges and firm structure make it ideal for shipping medium to heavy-weight spare parts, while the professional Honda-themed design adds authenticity and enhances brand reputation.
+
+This packaging solution is both functional and brand-driven, giving dealers, service centers, and suppliers peace of mind that their products are protected while also delivering a premium unboxing experience to customers. It balances durability with aesthetics, making it a trusted choice for automotive supply chains.</p><h3>Features:</h3><ul>Heavy-duty corrugated construction for maximum durability
+Professional finish with sharp edges and clean design
+Moisture-resistant and dust-protective surface
+Branded print for authenticity and professional appeal
+Suitable for both small and medium-sized automotive parts
+Eco-friendly and recyclable material options available</ul><h3>Usage Scenarios:</h3><ul>Packaging and shipping of spare parts such as filters, spark plugs, gears, or tools
+Storage of Honda-branded accessories in warehouses or service centers
+Dealer distribution for maintaining brand uniformity and trust
+Export and local transportation of replacement parts
+Professional presentation of spare parts in retail and authorized shops</ul>`,
+    extraImages:["honda(alt)1.png"]
+  },
+  "Mailing Boxes": {
+    title:"Mailing Boxes",
+    price:"40",
+    image:"mailing box.jpg",
+    description:`<h3>Long Description:</h3><p>Mailing Boxes are specially designed to ensure secure, reliable, and professional shipping of goods across local and international destinations. These cartons are crafted from premium corrugated material that provides excellent strength and durability, making them resistant to crushing, tearing, or bending during transit. With reinforced corners and sturdy walls, mailing boxes protect items from external impacts, moisture, and rough handling that are common during shipping and delivery.
+
+Beyond protection, mailing boxes are engineered for efficiency and professionalism. They feature a clean and minimal design that is perfect for adding company logos, shipping labels, or custom branding to create a professional appearance. Their lightweight yet durable structure also helps reduce shipping costs while maintaining high protection standards. Whether used for e-commerce orders, corporate deliveries, or personal parcels, mailing boxes serve as a dependable and cost-effective solution for all shipping needs.</p><h3>Features:</h3><ul>Strong corrugated cardboard construction for maximum durability
+Crush-resistant and impact-proof design for safe transport
+Lightweight structure that reduces shipping costs
+Easy to assemble with fold-and-lock mechanism
+Printable surface suitable for branding, logos, or labeling
+Eco-friendly and recyclable packaging material</ul><h3>Usage Scenarios:</h3><ul>Secure shipping of e-commerce orders (clothing, electronics, cosmetics, etc.)
+Safe transport of fragile items with protective inserts
+Corporate mailing and professional document delivery
+Subscription box packaging for monthly products or gifts
+Domestic and international parcel delivery for individuals and businesses</ul>`,
+    extraImages:["mailingBox1.png"]
+  }
+};
+
+
+function loadProductFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  const productName = params.get("title") || "Aqua Water Injection Box";
+  const product = products[productName];
+  if (!product) return;
+
+  document.getElementById("productTitle").textContent = product.title;
+  document.getElementById("productImage").src = product.image;
+  document.getElementById("productImage").alt = product.title;
+  document.getElementById("productDesc").innerHTML = product.description;
+  document.getElementById("productPrice").textContent = product.price;
+  document.getElementById("formProductName").value = product.title;
+
+  const extraImagesDiv = document.getElementById("extraImages");
+  extraImagesDiv.innerHTML = "";
+  product.extraImages.forEach(img => {
+    const imgTag = document.createElement("img");
+    imgTag.src = img;
+    imgTag.alt = product.title + " view";
+    extraImagesDiv.appendChild(imgTag);
+  });
+}
+loadProductFromURL();
+</script>
+
+</body>
+</html>
